@@ -1,0 +1,62 @@
+<header class="container">
+  <div class="row">
+    <div class="space1 col-md-1"></div>
+
+    <div class="logo col-md-3">
+      <img src="assets/images/logo.png" alt="ITET Bangladesh">
+      <h5>I T E T</h5>
+      <h5>Bangladesh</h5>
+    </div>
+
+    <div class="headerRight col-md-8">
+      <div class="space2"></div>
+
+      <div class="add1">
+        <img src="assets/images/add1.jpg" alt="">
+      </div>
+
+      <nav>
+        <ul class="navLeft">
+          <li><a href="">Home</a></li>
+          <li><a href="">Members</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="">Pages</a></li>
+          <li><a href="">Features</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+
+        <ul class="navRight">
+          <li>
+            <a id="userAdd" href="">
+              <i class="fa fa-user-plus"></i>
+              <span>Add Member</span>
+            </a>
+          </li>
+
+          <li>
+            <a id="myAccount" href="">
+              <i class="fa fa-user"></i>
+              <span>My account</span>
+            </a>
+          </li>
+
+          <li>
+            <a id="search"
+              (click)="showSearchPanel($event)"
+               href="">
+              <i class="fa fa-search"></i>
+              <span>Search for Members</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- search-panel start -->
+
+<section id="searchPanel">
+  <h2>Panel Content</h2>
+  <button (click)="hideSearchPanel()" class="btn btn-success">Home</button>
+</section>
