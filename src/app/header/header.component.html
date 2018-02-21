@@ -17,33 +17,43 @@
 
       <nav>
         <ul class="navLeft">
-          <li><a href="">Home</a></li>
-          <li><a href="">Members</a></li>
-          <li><a href="">Blog</a></li>
-          <li><a href="">Pages</a></li>
-          <li><a href="">Features</a></li>
-          <li><a href="">Contact</a></li>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">Members</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+          <li>
+            <a href="">Pages</a>
+          </li>
+          <li>
+            <a href="">Features</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
         </ul>
 
         <ul class="navRight">
           <li>
-            <a id="userAdd" href="">
+            <a id="userAdd">
               <i class="fa fa-user-plus"></i>
               <span>Add Member</span>
             </a>
           </li>
 
           <li>
-            <a id="myAccount" href="">
+            <a id="myAccount" data-toggle="modal" data-target="#logInModal">
               <i class="fa fa-user"></i>
-              <span>My account</span>
+              <span>Member Log In</span>
             </a>
           </li>
 
           <li>
-            <a id="search"
-              (click)="showSearchPanel($event)"
-               href="">
+            <a id="search" (click)="toggleSearchPanel()">
               <i class="fa fa-search"></i>
               <span>Search for Members</span>
             </a>
@@ -54,9 +64,65 @@
   </div>
 </header>
 
+<!-- Login Modal Start -->
+
+<div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Please sign in</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="POST">
+          <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username and/or password.</div>
+          <div class="form-group">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" name="inputEmail" placeholder="Email Address" class="form-control form-control-lg">
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" name="inputPassword" placeholder="Password" class="form-control form-control-lg">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-lg btn-primary pull-right">Log In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login Modal End -->
+
 <!-- search-panel start -->
 
 <section id="searchPanel">
-  <h2>Panel Content</h2>
-  <button (click)="hideSearchPanel()" class="btn btn-success">Home</button>
+
+
+  <div class="panel-navigation container-fluid">
+    <h2>I T E T</h2>
+    <form class="search-box">
+      <button type="submit"><i class="fa fa-search"></i></button>
+      <input type="text" placeholder="Search..." name="searchQuery">
+    </form>
+    <a (click)="toggleSearchPanel()" class="return-btn"><i class="fa fa-times"></i></a>
+  </div>
+
+
+  <div class="container-fluid search-result-container">
+    <aside class="search-filter">
+      <h5>Filter</h5>
+    </aside>
+
+    <div class="search-result">
+      <div class="search-result-controls">
+          <a ><i class="fa fa-list"></i> <span>List</span></a>
+          <a ><i class="fa fa-th"></i> <span>Grid</span></a>
+      </div>
+    </div>
+  </div>
+
 </section>

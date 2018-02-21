@@ -6,19 +6,15 @@ declare var $:any;
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  public invalidLogin = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  showSearchPanel(e: Event){
-    e.preventDefault();
-    $("#searchPanel").addClass("visible");
-  }
-
-  hideSearchPanel(){
-    $("#searchPanel").removeClass("visible");
+  toggleSearchPanel(){
+    $("#searchPanel").toggleClass("visible");
   }
 
 }
