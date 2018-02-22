@@ -1,0 +1,126 @@
+
+#searchPanel{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 60px);
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    transition: left 1s ease-out;
+}
+
+
+.panel-navigation{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+.panel-navigation h2{
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    padding-right: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.panel-navigation .search-box{
+    display: flex;
+    margin-right: auto;
+}
+
+.panel-navigation .search-box input{
+    border: none;
+    border-radius: 2px;
+    width: 500px;
+    padding: 0 20px;
+    padding-left: 40px;
+    transition: .5s;
+    border: 2px solid #f7f7f7;
+}
+.panel-navigation .search-box input:hover{
+    background-color: #f7f7f7;
+}
+.panel-navigation .search-box input:focus{
+    outline: none;
+    background-color: #f7f7f7;
+    padding: 0 10px;
+    padding-left: 20px;
+
+}
+.panel-navigation .search-box i{
+    font-size: 30px;
+    font-weight: 400;
+    margin: auto 10px;
+}
+.panel-navigation .search-box button{
+    background-color: #fff;
+    border: none;
+    padding: 0 5px;
+    margin-left: 10px;
+}
+
+.panel-navigation .search-box button:hover{
+    background-color: #f7f7f7;
+}
+.panel-navigation .return-btn{
+    font-size: 30px;
+    padding: 0 15px;
+    display: flex;
+    transition: .5s;
+}
+.return-btn:hover{
+    background-color: #f7f7f7;
+}
+.return-btn i{
+    margin: auto 0;
+}
+
+
+.search-result-container{
+    display: flex;
+    height: 100%;
+}
+
+.search-filter{
+    width: 250px;
+    padding-right: 15px;
+    border-right: 1px solid #ddd;
+    height: 100%;
+}
+.search-filter h5{
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-result{
+    width: 100%;
+    background-color: #F5F5F5;
+}
+
+.search-result-controls{
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    display: flex;
+}
+
+.search-result-controls a{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+.search-result-controls a i{
+    margin-right: 5px;
+}
+.search-result-controls a:hover, .search-result-controls a.active{
+    cursor: pointer;
+    background-color: #F4F4F4;
+}
+.search-result-controls a:hover i, .search-result-controls a.active i{
+    color: #26A69A;
+}
+
+.search-result-view{
+
+}

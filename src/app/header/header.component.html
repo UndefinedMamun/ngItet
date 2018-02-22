@@ -53,7 +53,7 @@
           </li>
 
           <li>
-            <a id="search" (click)="toggleSearchPanel()">
+            <a id="search" routerLink="/search" [queryParams]="{animate: true}">
               <i class="fa fa-search"></i>
               <span>Search for Members</span>
             </a>
@@ -97,32 +97,3 @@
 
 <!-- Login Modal End -->
 
-<!-- search-panel start -->
-
-<section id="searchPanel">
-
-
-  <div class="panel-navigation container-fluid">
-    <h2>I T E T</h2>
-    <form class="search-box">
-      <button type="submit"><i class="fa fa-search"></i></button>
-      <input type="text" placeholder="Search..." name="searchQuery">
-    </form>
-    <a (click)="toggleSearchPanel()" class="return-btn"><i class="fa fa-times"></i></a>
-  </div>
-
-
-  <div class="container-fluid search-result-container">
-    <aside class="search-filter">
-      <h5>Filter</h5>
-    </aside>
-
-    <div class="search-result">
-      <div class="search-result-controls">
-          <a ><i class="fa fa-list"></i> <span>List</span></a>
-          <a ><i class="fa fa-th"></i> <span>Grid</span></a>
-      </div>
-    </div>
-  </div>
-
-</section>

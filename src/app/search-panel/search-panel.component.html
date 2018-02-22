@@ -1,0 +1,37 @@
+<!-- search-panel start -->
+
+<section id="searchPanel">
+
+
+    <div class="panel-navigation container-fluid">
+      <h2>I T E T</h2>
+      <form class="search-box">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        <input type="text" placeholder="Search..." name="searchQuery">
+      </form>
+      <a 
+        (click)="hideSearchPanel()"
+        class="return-btn"
+      ><i class="fa fa-times"></i></a>
+    </div>
+  
+  
+    <div class="container-fluid search-result-container">
+      <aside class="search-filter">
+        <h5>Filter</h5>
+      </aside>
+  
+      <div class="search-result">
+        <div class="search-result-controls">
+            <a [class.active]="viewType === 'list'" (click)="viewType='list'"><i class="fa fa-list"></i> <span>List</span></a>
+            <a [class.active]="viewType === 'grid'" (click)="viewType='grid'"><i class="fa fa-th"></i> <span>Grid</span></a>
+        </div>
+
+        <div class="search-result-view">
+          <h2 [hidden]="viewType === 'grid'">List View</h2>
+          <h2 [hidden]="viewType === 'list'">Grid View</h2>
+        </div>
+      </div>
+    </div>
+  
+  </section>
