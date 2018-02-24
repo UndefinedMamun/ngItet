@@ -12,9 +12,20 @@ export class SearchPanelComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+    
+  ) { 
+    // this.router.events.subscribe((e: any[]) => {
+    //   console.log('previous', e[1].urlAfterRedirects);
+    // });
+  }
   
 
+  toggleFilters(){
+    if($(window).width() > 480 )
+      return;
+    $('.search-filter').toggleClass("mView");
+    $('body').toggleClass("noScroll");
+  }
 
   hideSearchPanel(){
     let self = this.router;
@@ -29,19 +40,27 @@ export class SearchPanelComponent implements OnInit{
   animateSearchPanel(){
     let searchPanel = $("#searchPanel");
     $(searchPanel).css({
-      left: "-70%",
+      left: "-90%",
       opacity: 0
     })
     $(searchPanel).animate({
       left: 0,
       opacity: 1 
-    }, 400, "swing");
+    }, 200, "swing");
   }
 
   ngOnInit() {
-    let animate = this.route.snapshot.queryParamMap.get("animate")
+    let animate = this.route.snapshot.queryParamMap.get("animate");
     if(animate)
       this.animateSearchPanel();
+    
+    this.route.queryParamMap
+      .subscribe(params => {
+        let viewType = params.get('viewmode');
+        if(viewType)
+          this.viewType = viewType;
+      })
+    
   }
 
 }

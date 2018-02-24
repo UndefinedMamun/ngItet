@@ -6,13 +6,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
+import { ResultViewComponent } from './result-view/result-view.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SearchPanelComponent
+    SearchPanelComponent,
+    ResultViewComponent
   ],
   imports: [
     BrowserModule,

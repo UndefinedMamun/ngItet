@@ -13,14 +13,29 @@
 body {
     font-family: 'Open Sans', 'sans-serif';
     font-size: 14px;
+    height: fit-content;
 }
-
+body.noScroll { 
+    overflow: hidden;
+}
+body.noScroll:after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(38,166,154,.4);
+    width: 103%;
+    height: 100%;
+    z-index: 1;
+}
 ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-
+a{
+    color: inherit
+}
 a:hover{
     text-decoration: none;
     color: inherit;

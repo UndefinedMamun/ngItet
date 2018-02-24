@@ -18,18 +18,91 @@
   
     <div class="container-fluid search-result-container">
       <aside class="search-filter">
-        <h5>Filter</h5>
+        <h5 (click)="toggleFilters()">Filter</h5>
+        <div class="filter-name form-group">
+          <label for="fName">Name</label>
+          <div class='input-group'>
+            <input placeholder="Name" type="text" class="form-control form-control-sm" id="fName">
+            <span class="input-group-btn">
+              <button class="btn">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+
+          <div class='filter-id form-group'>
+            <label for="fId">Id</label>
+            <div class="input-group">
+              <input placeholder="ID" type="text" class="form-control form-control-sm" id="fId">
+              <span class="input-group-btn">
+                <button class="btn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+
+          <div class='filter-user-name form-group'>
+            <label for="fUserName">User Name</label>
+            <div class="input-group">
+              <input type="text" placeholder="User Name" class="form-control form-control-sm" id="fUserName">
+              <span class="input-group-btn">
+                <button class="btn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+
+          <div class='filter-company form-group'>
+            <label for="fCompany">Company</label>
+            <div class="input-group">
+              <input placeholder="Company" type="text" class="form-control" id="fCompany">
+              <span class="input-group-btn">
+                <button class="btn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+
+          <div class='filter-academic form-group'>
+            <label for="fAcademy">Academic Info</label>
+            <select class="form-control" id="fAcademy">
+              <option value="">Select</option>
+              <option value="">Select</option>
+            </select>
+          </div>
+
+          <div class='filter-relign form-group'>
+            <label for="fRelign">Relign</label>
+            <select class="form-control" id="fRelign">
+              <option value="">Select</option>
+              <option value="">Muslim</option>
+              <option value="">Hindu</option>
+              <option value="">Christian</option>
+            </select>
+          </div>
+
       </aside>
   
       <div class="search-result">
         <div class="search-result-controls">
-            <a [class.active]="viewType === 'list'" (click)="viewType='list'"><i class="fa fa-list"></i> <span>List</span></a>
-            <a [class.active]="viewType === 'grid'" (click)="viewType='grid'"><i class="fa fa-th"></i> <span>Grid</span></a>
+            <a 
+              [class.active]="viewType === 'list'"
+              routerLink="/search" 
+              [queryParams]="{viewmode: 'list'}"
+            ><i class="fa fa-list"></i> <span>List</span></a>
+            <a 
+              routerLink="/search" 
+              [queryParams]="{viewmode: 'grid'}"
+              [class.active]="viewType === 'grid'"
+            ><i class="fa fa-th"></i> <span>Grid</span></a>
         </div>
 
         <div class="search-result-view">
-          <h2 [hidden]="viewType === 'grid'">List View</h2>
-          <h2 [hidden]="viewType === 'list'">Grid View</h2>
+          <result-view [view-type]="viewType"></result-view>
         </div>
       </div>
     </div>
