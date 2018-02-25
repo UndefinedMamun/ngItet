@@ -13,10 +13,10 @@
 
     <div class="single-reslut">
         <div class="result-thumbnail">
-            <a href=""><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
+            <a data-toggle="modal" data-target="#memberModal" ><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
         </div>
         <div class="result-meta">
-            <a href=""><h4>Mr. Tony Stark</h4></a>
+            <a data-toggle="modal" data-target="#memberModal" ><h4>Mr. Tony Stark</h4></a>
             <div class="work-info">
                 <p><i class="fa fa-male"></i> Project Manager</p>
                 <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
@@ -133,7 +133,38 @@
     </div>
 
     
-</div>   
+</div>
+
+<!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="memberModalLabel"> Mr. Member's Profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="../../assets/images/demo-thumbnail.jpg" alt="">
+            <p><i class="fa fa-male"></i> Project Manager</p>
+            <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
+            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
+            <span><i class="fa fa-phone"></i> +8801********</span>
+
+            <hr>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellendus voluptate corporis sapiente, deserunt vel ea laboriosam doloremque ab atque accusantium. Odit, nobis. Fugiat veniam totam sunt explicabo omnis. Consequuntur rem, ad eos repellat accusamus id, aliquid dolor dolorem quod adipisci blanditiis consequatur sint error doloremque eveniet eius repudiandae beatae quasi delectus labore numquam et? Consectetur laudantium quo pariatur accusantium ut! Illo nostrum deserunt quam sint placeat quas? Tempora harum, eos eligendi eum vitae libero quidem at consequatur a vero!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Previous</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 

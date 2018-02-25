@@ -87,3 +87,36 @@
     margin: 0 auto;
     padding: 5px 20px 15px 20px;
 }
+
+
+
+
+
+
+
+#memberModal .modal-dialog {
+    max-width: 70%;
+}
+#memberModal .modal-footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+@media only screen and (max-width: 767px){
+    #memberModal .modal-dialog{
+        margin: 10px auto;
+        max-width: 95%;
+    }
+
+    .gridView .single-reslut {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .gridView .single-reslut {
+        width: 190px;
+    }
+}
