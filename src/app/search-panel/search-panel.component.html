@@ -22,7 +22,7 @@
         <div class="filter-name form-group">
           <label for="fName">Name</label>
           <div class='input-group'>
-            <input placeholder="Name" type="text" class="form-control form-control-sm" id="fName">
+            <input (keyup)="filterMembers()" [(ngModel)]="filter.fName" placeholder="Name" type="text" class="form-control form-control-sm" id="fName">
             <span class="input-group-btn">
               <button class="btn">
                 <i class="fa fa-search"></i>
@@ -34,7 +34,7 @@
           <div class='filter-id form-group'>
             <label for="fId">Id</label>
             <div class="input-group">
-              <input placeholder="ID" type="text" class="form-control form-control-sm" id="fId">
+              <input (keyup)="filterMembers()" [(ngModel)]="filter.fId" placeholder="ID" type="text" class="form-control form-control-sm" id="fId">
               <span class="input-group-btn">
                 <button class="btn">
                   <i class="fa fa-search"></i>
@@ -46,7 +46,7 @@
           <div class='filter-user-name form-group'>
             <label for="fUserName">User Name</label>
             <div class="input-group">
-              <input type="text" placeholder="User Name" class="form-control form-control-sm" id="fUserName">
+              <input (keyup)="filterMembers()" [(ngModel)]="filter.fUserName" type="text" placeholder="User Name" class="form-control form-control-sm" id="fUserName">
               <span class="input-group-btn">
                 <button class="btn">
                   <i class="fa fa-search"></i>
@@ -58,7 +58,7 @@
           <div class='filter-company form-group'>
             <label for="fCompany">Company</label>
             <div class="input-group">
-              <input placeholder="Company" type="text" class="form-control" id="fCompany">
+              <input (keyup)="filterMembers()" [(ngModel)]="filter.fCompany" placeholder="Company" type="text" class="form-control" id="fCompany">
               <span class="input-group-btn">
                 <button class="btn">
                   <i class="fa fa-search"></i>
@@ -69,19 +69,19 @@
 
           <div class='filter-academic form-group'>
             <label for="fAcademy">Academic Info</label>
-            <select class="form-control" id="fAcademy">
-              <option value="">Select</option>
-              <option value="">Select</option>
+            <select (change)="filterMembers()" [(ngModel)]="filter.fAcademy" class="form-control" id="fAcademy">
+              <option value="0">Any</option>
+              <option *ngFor="let academy of academies; let i = index" value="{{i+1}}">{{academy}}</option>
             </select>
           </div>
 
           <div class='filter-relign form-group'>
             <label for="fRelign">Relign</label>
-            <select class="form-control" id="fRelign">
-              <option value="">Select</option>
-              <option value="">Muslim</option>
-              <option value="">Hindu</option>
-              <option value="">Christian</option>
+            <select (change)="filterMembers()" [(ngModel)]="filter.fRelign" class="form-control" id="fRelign">
+              <option value="0">All</option>
+              <option value="1">Muslim</option>
+              <option value="2">Hindu</option>
+              <option value="3">Christian</option>
             </select>
           </div>
 
@@ -102,7 +102,7 @@
         </div>
 
         <div class="search-result-view">
-          <result-view [view-type]="viewType"></result-view>
+          <result-view [view-type]="viewType" [filtered]="filtered"></result-view>
         </div>
       </div>
     </div>

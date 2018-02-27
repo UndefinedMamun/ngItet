@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { ResultViewComponent } from './result-view/result-view.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot([
       { path: '', component: HeaderComponent},
       { path: 'search', component: SearchPanelComponent},

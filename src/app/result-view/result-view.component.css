@@ -14,7 +14,22 @@
 
 
 
+.search-result::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
 
+.search-result::-webkit-scrollbar
+{
+	width: 5px;
+	background-color: #F5F5F5;
+}
+
+.search-result::-webkit-scrollbar-thumb
+{
+	background-color: #26A69A;
+}
 
 
 
@@ -68,15 +83,14 @@
 .gridView .single-reslut{
     width: 240px;
     padding: 0;
+    flex-direction: column;
+    max-height: fit-content;
 }
 
 .gridView .result-thumbnail{
     margin-bottom: 20px;
 }
 
-.gridView .single-reslut{
-    flex-direction: column;
-}
 
 .gridView .result-thumbnail a{
     margin: 0 auto;
@@ -101,6 +115,10 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+#memberModal .modal-footer .btn:last-child{
+    margin-left: auto;
 }
 
 

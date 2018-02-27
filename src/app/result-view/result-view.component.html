@@ -11,126 +11,21 @@
     <!-- <h2 [hidden]="viewType === 'grid'">List View</h2>
     <h2 [hidden]="viewType === 'list'">Grid View</h2> -->
 
-    <div class="single-reslut">
+    <div class="single-reslut" *ngFor="let member of filtered; let i = index">
         <div class="result-thumbnail">
-            <a data-toggle="modal" data-target="#memberModal" ><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
+            <a routerLink="/search" [queryParams]="{viewmode: viewType, index: i }"><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
         </div>
         <div class="result-meta">
-            <a data-toggle="modal" data-target="#memberModal" ><h4>Mr. Tony Stark</h4></a>
+            <a routerLink="/search" [queryParams]="{viewmode: viewType, index: i }" ><h4>{{member.name}}</h4></a>
             <div class="work-info">
-                <p><i class="fa fa-male"></i> Project Manager</p>
-                <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
+                <p><i class="fa fa-male"></i> {{member.designation}}</p>
+                <p><i class="fa fa-briefcase"></i> {{member.company}}</p>
             </div>
-            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
-            <span><i class="fa fa-phone"></i> +8801********</span>
+            <p class="academic"> <i class="fa fa-university"></i> {{academies[member.academic - 1]}}</p>
+            <span><i class="fa fa-phone"></i> {{member.contact}}</span>
         </div>
     </div>
 
-    <div class="single-reslut">
-        <div class="result-thumbnail">
-            <a href=""><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
-        </div>
-        <div class="result-meta">
-            <a href=""><h4>Mr. Tony Stark</h4></a>
-            <div class="work-info">
-                <p><i class="fa fa-male"></i> Project Manager</p>
-                <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
-            </div>
-            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
-            <span><i class="fa fa-phone"></i> +8801********</span>
-        </div>
-    </div>
-    <div class="single-reslut">
-        <div class="result-thumbnail">
-            <a href=""><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
-        </div>
-        <div class="result-meta">
-            <a href=""><h4>Mr. Tony With a big last name</h4></a>
-            <div class="work-info">
-                <p><i class="fa fa-male"></i> Project Manager</p>
-                <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
-            </div>
-            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
-            <span><i class="fa fa-phone"></i> +8801********</span>
-        </div>
-    </div>
-
-    <div class="single-reslut">
-        <div class="result-thumbnail">
-            <a href=""><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
-        </div>
-        <div class="result-meta">
-            <a href=""><h4>Mr. Tony Stark</h4></a>
-            <div class="work-info">
-                <p><i class="fa fa-male"></i> Project Manager</p>
-                <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
-            </div>
-            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
-            <span><i class="fa fa-phone"></i> +8801********</span>
-        </div>
-    </div>
-
-    <div class="single-reslut">
-        <div class="result-thumbnail">
-            <a href=""><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
-        </div>
-        <div class="result-meta">
-            <a href=""><h4>Mr. Tony Stark</h4></a>
-            <div class="work-info">
-                <p><i class="fa fa-male"></i> Project Manager</p>
-                <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
-            </div>
-            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
-            <span><i class="fa fa-phone"></i> +8801********</span>
-        </div>
-    </div>
-
-    <div class="single-reslut">
-        <div class="result-thumbnail">
-            <a href=""><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
-        </div>
-        <div class="result-meta">
-            <a href=""><h4>Mr. Tony Stark</h4></a>
-            <div class="work-info">
-                <p><i class="fa fa-male"></i> Project Manager</p>
-                <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
-            </div>
-            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
-            <span><i class="fa fa-phone"></i> +8801********</span>
-        </div>
-    </div>
-
-
-
-    <div class="single-reslut">
-        <div class="result-thumbnail">
-            <a href=""><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
-        </div>
-        <div class="result-meta">
-            <a href=""><h4>Mr. Tony Stark</h4></a>
-            <div class="work-info">
-                <p><i class="fa fa-male"></i> Project Manager</p>
-                <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
-            </div>
-            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
-            <span><i class="fa fa-phone"></i> +8801********</span>
-        </div>
-    </div>
-
-    <div class="single-reslut">
-        <div class="result-thumbnail">
-            <a href=""><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
-        </div>
-        <div class="result-meta">
-            <a href=""><h4>Mr. Tony Stark</h4></a>
-            <div class="work-info">
-                <p><i class="fa fa-male"></i> Project Manager</p>
-                <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
-            </div>
-            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
-            <span><i class="fa fa-phone"></i> +8801********</span>
-        </div>
-    </div>
 
     
 </div>
@@ -141,26 +36,26 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="memberModalLabel"> Mr. Member's Profile</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title" id="memberModalLabel"> {{filtered[index]?.name}}'s Profile</h5>
+          <button routerLink="/search" [queryParams]="{viewmode: viewType}" type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
             <img src="../../assets/images/demo-thumbnail.jpg" alt="">
-            <p><i class="fa fa-male"></i> Project Manager</p>
-            <p><i class="fa fa-briefcase"></i>  Company LMTD</p>
-            <p class="academic"> <i class="fa fa-university"></i> Dhaka University</p>
-            <span><i class="fa fa-phone"></i> +8801********</span>
+            <p><i class="fa fa-male"></i> {{filtered[index]?.designation}}</p>
+            <p><i class="fa fa-briefcase"></i>  {{filtered[index]?.company}}</p>
+            <p class="academic"> <i class="fa fa-university"></i> {{academies[filtered[index]?.academic-1]}}</p>
+            <span><i class="fa fa-phone"></i> {{filtered[index]?.contact}}</span>
 
             <hr>
 
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem repellendus voluptate corporis sapiente, deserunt vel ea laboriosam doloremque ab atque accusantium. Odit, nobis. Fugiat veniam totam sunt explicabo omnis. Consequuntur rem, ad eos repellat accusamus id, aliquid dolor dolorem quod adipisci blanditiis consequatur sint error doloremque eveniet eius repudiandae beatae quasi delectus labore numquam et? Consectetur laudantium quo pariatur accusantium ut! Illo nostrum deserunt quam sint placeat quas? Tempora harum, eos eligendi eum vitae libero quidem at consequatur a vero!</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Previous</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Next</button>
+          <button [hidden]="index == 0" routerLink="/search" [queryParams]="{viewmode: viewType, index: index-1 }" type="button" class="btn btn-primary">Previous</button>
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+          <button [hidden]="index+1 == filtered.length" routerLink="/search" [queryParams]="{viewmode: viewType, index: index+1 }" type="button" class="btn btn-primary">Next</button>
         </div>
       </div>
     </div>
