@@ -31,6 +31,14 @@
 	background-color: #26A69A;
 }
 
+#noSearch{
+    display: flex;
+    height: 100%;
+}
+#noSearch h2{
+    margin: auto auto;
+}
+
 
 
 

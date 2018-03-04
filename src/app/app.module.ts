@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { ResultViewComponent } from './result-view/result-view.component';
+import { SearchPanelService } from './services/search-panel.service';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { ResultViewComponent } from './result-view/result-view.component';
       { path: 'search', component: SearchPanelComponent},
     ])
   ],
-  providers: [],
+  providers: [
+    SearchPanelService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

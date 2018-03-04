@@ -9,7 +9,7 @@ declare var $:any;
 })
 export class ResultViewComponent implements OnInit {
   @Input('view-type') viewType:string;
-  @Input('filtered') filtered:Array < {} >;
+  @Input('filtered') filtered:Array<{}>;
   index;
   academies = [
     "Dhaka University",

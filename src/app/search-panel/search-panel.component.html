@@ -7,7 +7,12 @@
       <h2>I T E T</h2>
       <form class="search-box">
         <button type="submit"><i class="fa fa-search"></i></button>
-        <input type="text" placeholder="Search..." name="searchQuery">
+        <input 
+          [(ngModel)]="searchQuery"
+          (keyup)="mainSearch()" 
+          type="text" 
+          placeholder="Search..." 
+          name="searchQuery">
       </form>
       <a 
         (click)="hideSearchPanel()"
@@ -47,6 +52,40 @@
             <label for="fUserName">User Name</label>
             <div class="input-group">
               <input (keyup)="filterMembers()" [(ngModel)]="filter.fUserName" type="text" placeholder="User Name" class="form-control form-control-sm" id="fUserName">
+              <span class="input-group-btn">
+                <button class="btn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+
+
+          <div class='filter-user-name form-group'>
+            <label for="fContact">Contact Info</label>
+            <div class="input-group">
+              <input 
+                (keyup)="filterMembers()" 
+                [(ngModel)]="filter.fContact" 
+                type="text" placeholder="Contact" 
+                class="form-control form-control-sm" id="fContact">
+              <span class="input-group-btn">
+                <button class="btn">
+                  <i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+
+
+          <div class='filter-user-name form-group'>
+            <label for="fEmail">Email Address</label>
+            <div class="input-group">
+              <input 
+                (keyup)="filterMembers()" 
+                [(ngModel)]="filter.fEmail" 
+                type="text" placeholder="Email Address" 
+                class="form-control form-control-sm" id="fEmail">
               <span class="input-group-btn">
                 <button class="btn">
                   <i class="fa fa-search"></i>

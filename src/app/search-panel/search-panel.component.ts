@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { SearchPanelService } from '../services/search-panel.service';
 declare var $:any;
 @Component({
   selector: 'search-panel',
@@ -8,10 +9,13 @@ declare var $:any;
 })
 export class SearchPanelComponent implements OnInit{
   viewType = "list";
+  searchQuery;
   filter = {
     fName: "",
     fId: "",
     fUserName: "",
+    fContact: "",
+    fEmail: "",
     fCompany: "",
     fAcademy: 0,
     fRelign: 0
@@ -23,110 +27,14 @@ export class SearchPanelComponent implements OnInit{
     "Khulna University"
   ]
 
-  members = [
-    {
-      id: 1001,
-      userName: "jason",
-      name: "Jason Statham",
-      designation: "Team Manager",
-      company: "A company",
-      academic: 2,
-      contact: "+8801*********",
-      relign: 1
-    },
-    {
-      id: 1002,
-      userName: "mark",
-      name: "Mark Ruffalo",
-      designation: "Team Manager",
-      company: "B company",
-      academic: 1,
-      contact: "+8801*********",
-      relign: 1
-    },
-    {
-      id: 1003,
-      userName: "ryan",
-      name: "Ryan Reynolds",
-      designation: "Team Manager",
-      company: "B company",
-      academic: 2,
-      contact: "+8801*********",
-      relign: 3
-    },
-    {
-      id: 1004,
-      userName: "samuel",
-      name: "Samuel L. Jackson",
-      designation: "Team Manager",
-      company: "C company",
-      academic: 1,
-      contact: "+8801*********",
-      relign: 2
-    },
-    {
-      id: 1005,
-      userName: "tom",
-      name: "Tom Hanks",
-      designation: "Team Manager",
-      company: "B company",
-      academic: 2,
-      contact: "+8801*********",
-      relign: 1
-    },
-    {
-      id: 1006,
-      userName: "tom",
-      name: "Tom Cruise",
-      designation: "Team Manager",
-      company: "C company",
-      academic: 3,
-      contact: "+8801*********",
-      relign: 3
-    },
-    {
-      id: 1007,
-      userName: "robert",
-      name: "Robert Downey Jr",
-      designation: "The Boss",
-      company: "F company",
-      academic: 1,
-      contact: "+8801*********",
-      relign: 1
-    },
-    {
-      id: 1008,
-      userName: "adam",
-      name: "Adam Sandler",
-      designation: "CEO",
-      company: "D company",
-      academic: 2,
-      contact: "+8801*********",
-      relign: 2
-    },
-    {
-      id: 1009,
-      userName: "vin",
-      name: "Vin Diesel",
-      designation: "Team Manager",
-      company: "B company",
-      academic: 2,
-      contact: "+8801*********",
-      relign: 1
-    },
-    {
-      id: 1010,
-      userName: "mark",
-      name: "Mark Wahlberg",
-      designation: "Team Manager",
-      company: "D company",
-      academic: 3,
-      contact: "+8801*********",
-      relign: 2
-    }
-  ]
+  members = [];
 
   filtered = this.members;
+
+  mainSearch(){
+    this.members = this.service.search(this.searchQuery);
+    this.filterMembers();
+  }
 
   filterMembers(){
     this.filtered = this.members.filter( member => {
@@ -136,13 +44,19 @@ export class SearchPanelComponent implements OnInit{
         res = res && (+this.filter.fId == member.id);
 
       if(this.filter.fName !== "")
-        res = res && (this.filter.fName.toLowerCase() == member.name.toLowerCase());
+        res = res && (member.name.toLowerCase().includes(this.filter.fName.toLowerCase()));
 
       if(this.filter.fUserName !== "")
-        res = res && (this.filter.fUserName.toLowerCase() == member.userName.toLowerCase());
+        res = res && (member.userName.toLowerCase().includes(this.filter.fUserName.toLowerCase()));
+      
+      if(this.filter.fEmail !== "")
+        res = res && (member.email.toLowerCase().includes(this.filter.fEmail.toLowerCase()));
+      
+      if(this.filter.fContact !== "")
+        res = res && (member.contact.includes(this.filter.fContact));
       
       if(this.filter.fCompany !== "")
-        res = res && (this.filter.fCompany.toLowerCase() == member.company.toLowerCase());
+        res = res && (member.company.toLowerCase().includes(this.filter.fCompany.toLowerCase()));
       
       if(this.filter.fAcademy > 0)
         res = res && (+this.filter.fAcademy == member.academic);
@@ -160,7 +74,8 @@ export class SearchPanelComponent implements OnInit{
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private service: SearchPanelService
     
   ) { 
     // this.router.events.subscribe((e: any[]) => {

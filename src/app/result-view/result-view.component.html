@@ -6,11 +6,8 @@
     class="search-result"
     [class.listView] = "viewType === 'list'"
     [class.gridView] = "viewType === 'grid'"
-    
+    *ngIf="filtered.length != 0"
 >
-    <!-- <h2 [hidden]="viewType === 'grid'">List View</h2>
-    <h2 [hidden]="viewType === 'list'">Grid View</h2> -->
-
     <div class="single-reslut" *ngFor="let member of filtered; let i = index">
         <div class="result-thumbnail">
             <a routerLink="/search" [queryParams]="{viewmode: viewType, index: i }"><img src="../../assets/images/demo-thumbnail.jpg" alt=""></a>
@@ -34,7 +31,7 @@
   <!-- Modal -->
   <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div *ngIf="filtered.length != 0" class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="memberModalLabel"> {{filtered[index]?.name}}'s Profile</h5>
           <button routerLink="/search" [queryParams]="{viewmode: viewType}" type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -63,3 +60,5 @@
 
 
 
+
+<div *ngIf="filtered.length == 0" id="noSearch" ><H2> Please type something in the search field to see result</H2></div>
