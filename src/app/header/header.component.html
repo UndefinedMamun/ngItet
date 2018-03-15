@@ -1,22 +1,46 @@
-<header class="container">
+<header class="container-fluid">
+  <div class="row space1"></div>
   <div class="row">
-    <div class="space1 col-md-1"></div>
-
-    <div class="logo col-md-3">
-      <img src="assets/images/logo.png" alt="ITET Bangladesh">
-      <h5>I T E T</h5>
-      <h5>Bangladesh</h5>
+    <div class="logo col-md-4">
+      <a routerLink="/">
+        <img src="assets/images/logo.png" alt="ITET Bangladesh">
+      </a>
+      <div class="logo-meta">
+        <h1>I T E T</h1>
+        <h5>B a n g l a d e s h</h5>
+      </div>
     </div>
 
-    <div class="headerRight col-md-8">
-      <div class="space2"></div>
-
-      <div class="add1">
+    <div class="add1 col-md-8">
+      <a href="#">
         <img src="assets/images/add1.jpg" alt="">
-      </div>
+      </a>
+    </div>
+  </div>
 
+
+  <div class="row">
+    <div class="headerRight col-md-12">
       <nav>
         <ul class="navLeft">
+          <li class="active">
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">Members</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+          <li>
+            <a href="">Pages</a>
+          </li>
+          <li>
+            <a href="">Features</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
           <li>
             <a href="">Home</a>
           </li>
@@ -97,3 +121,5 @@
 
 <!-- Login Modal End -->
 
+
+<home-page></home-page>

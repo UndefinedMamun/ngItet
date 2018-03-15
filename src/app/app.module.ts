@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchPanelComponent } from './search-panel/search-panel.component';
 import { ResultViewComponent } from './result-view/result-view.component';
 import { SearchPanelService } from './services/search-panel.service';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { SearchPanelService } from './services/search-panel.service';
     AppComponent,
     HeaderComponent,
     SearchPanelComponent,
-    ResultViewComponent
+    ResultViewComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

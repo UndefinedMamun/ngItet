@@ -1,25 +1,29 @@
 
-.space1{
-    background-color: #4B8BE3;
-}
 
 .logo{
     background-color: #ddd;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
-.logo img{
+.logo a{
     width: max-content;
     align-self: center;
 }
-
-.logo h5{
+.logo-meta{
     align-self: center;
-    margin-bottom: 0;
+    justify-content: center;
+    text-align: center;
+    margin-left: 5px;
     text-transform: uppercase;
-    margin-top: 3px;
+    
+}
+.logo-meta h1{
+    font-weight: 800;
+    text-align: center;
+}
+.logo-meta h5{
+    font-weight: 700;
 }
 
 .headerRight{
@@ -40,15 +44,16 @@ nav ul li{
 }
 
 .navLeft li a{
-    padding: 2px 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
     color: #000;
     transition: .5s ease-out;
     border-radius: 2px;
     text-transform: uppercase;
 }
 
-.navLeft li a:hover{
-    background-color: #FF9789;
+.navLeft li a:hover, .navLeft li.active a{
+    background-color: #ff7b74;
     color: #fff;
 }
 
@@ -82,8 +87,11 @@ nav ul li{
     text-align: center;
 }
 
-.space2{
+.space1{
     height: 40px;
+}
+.add1{
+    padding: 0;
 }
 .add1 img{
     width: 100%;
