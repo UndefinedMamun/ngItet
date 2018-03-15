@@ -1,0 +1,129 @@
+
+.sliderSection{
+    /* height: 360px; */
+}
+
+/* Right Tab */
+
+.right-tab{
+    padding-right: 0;
+}
+.right-tab ul.nav.nav-pills{
+}
+.right-tab li.nav-item{
+    flex: 1;
+    
+}
+.right-tab li.nav-item:nth-child(1){
+    background-color: #F4716A;
+}
+.right-tab li.nav-item:nth-child(2){
+    background-color: #FF7B77;
+}
+.right-tab li.nav-item:nth-child(3){
+    background-color: #FF8D8A;
+}
+.right-tab li.nav-item a{
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.right-tab li.nav-item a.active{
+    background-color: inherit;
+    /* color: #fff; */
+}
+
+.right-tab .tab-pane{
+    overflow-y: auto;
+}
+.single-pan {
+    display: flex;
+    margin: 5px;
+}
+
+.dates {
+    width: 150px;
+    text-align: center;
+    background-color: #57CDF3;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.dates p{
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.excerpts {
+    margin: 5px 10px;
+}
+
+.excerpts a{
+    color: #57CDF3;
+}
+
+.add-2{
+    height: 120px;
+    background-color: #6DCFF6;
+    margin: 15px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Service Section Start */
+.serviceSection{
+    padding-bottom: 10px;
+}
+.sectionHeader h4{
+    font-weight: 600;
+}
+.sectionHeader p{
+    font-style: italic;
+}
+.service-tab {
+    display: flex;
+    margin-top: 20px;
+}
+
+.service-tab #v-pills-tab {
+    /* width: 343px; */
+}
+.service-tab #v-pills-tab a{
+    display: flex;
+    padding: 0;
+}
+.service-tab #v-pills-tab a.active{
+    background-color: inherit;
+    color: #FF1C32;
+}
+.service-tab #v-pills-tab a i{
+    font-size: 32px;
+    margin: auto 10px auto 0;
+}
+.service-tab #v-pills-tab a p{
+    margin: auto 0;
+}
+
+.service-tab #v-pills-tabContent{
+    margin-left: 30px;
+}
+.service-tab #v-pills-tabContent i{
+    font-size: 48px;
+    color: #FF1C32;
+}
+.service-tab #v-pills-tabContent h4{}
+.service-tab #v-pills-tabContent p{}
