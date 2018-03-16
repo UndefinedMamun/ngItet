@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'home-page',
@@ -8,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class HomePageComponent implements OnInit {
 
   constructor() { }
+
+  toggleFooter(){
+    $('#footer').toggleClass("show");
+  }
 
   ngOnInit() {
   }

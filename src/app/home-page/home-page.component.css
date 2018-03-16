@@ -1,4 +1,36 @@
 
+@keyframes bounce {
+    from,
+    20%,
+    53%,
+    80%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    40%,
+    43% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate3d(0, -30px, 0);
+    }
+  
+    70% {
+      animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transform: translate3d(0, -15px, 0);
+    }
+  
+    90% {
+      transform: translate3d(0, -4px, 0);
+    }
+  }
+  
+  .bounce {
+    animation-name: bounce;
+    transform-origin: center bottom;
+  }
+
+
 .sliderSection{
     /* height: 360px; */
 }
@@ -86,7 +118,7 @@
 
 /* Service Section Start */
 .serviceSection{
-    padding-bottom: 10px;
+    padding-bottom: 50px;
 }
 .sectionHeader h4{
     font-weight: 600;
@@ -127,3 +159,97 @@
 }
 .service-tab #v-pills-tabContent h4{}
 .service-tab #v-pills-tabContent p{}
+
+
+
+
+
+
+/* Footer Start */
+#footer{
+	position: fixed;
+	bottom: -347px;
+	left: 0;
+	background-color: #ddd;
+	width: 100%;
+	z-index: 10;
+    transition: .5s ease-in-out;
+}
+#footer.show{
+    bottom: 0;
+}
+.footer-top-area{position: relative;
+    background-color: #C9C4C4;
+    top: -19px;
+    padding: 5px;
+}
+.row-padding{
+	padding-bottom: 35px;
+}
+.developer-contact{}
+.developer-contact p{}
+.developer-contact-2{}
+.footer-upDown-btn{
+    display: block;
+}
+.footer-area{
+	padding: 50px 0px;
+}
+.footer-title{
+	margin-bottom: 20px;
+
+}
+.footer-title h5{
+	text-transform: uppercase;
+	color: #000;
+}
+.Developer-links{}
+.Developer-links img{
+	margin-bottom: 20px;
+}
+.footer-links{}
+.footer-links ul,
+.footer-social-links ul{margin:0px;padding: 0px;list-style: none;}
+.footer-links ul li{}
+.footer-links ul li a,
+.footer-social-links ul li a{
+	display: block;
+	font-size: 13px;
+	color: #000;
+	text-transform: uppercase;
+	padding: 5px 0px;
+	border-bottom:1px solid #000;
+}
+.footer-social-links{}
+.footer-social-links ul{}
+.footer-social-links ul li{}
+.footer-social-links ul li a{}
+.footer-upDown-btn{
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	width: 20px;
+	padding: 5px;
+	cursor: pointer;
+	transform: translateX(-50%);
+}
+.footer-upDown-btn img{
+	width: 20px;
+}
+.footer-upDown-btn i.fa-angle-up{
+
+	font-size: 20px;
+}
+.footer-highlight{
+	transition: .5s linear;
+}
+.footer-not-highlight{
+	transition: .5s linear;
+}
+
+span.footer-upDown-btn img{
+	-moz-animation:bounce 1s infinite;
+	-webkit-animation:bounce 1s infinite;
+	animation:bounce 1s infinite;
+	cursor: pointer;
+}
