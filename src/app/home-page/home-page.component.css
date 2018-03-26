@@ -32,7 +32,10 @@
 
 
 .sliderSection{
-    /* height: 360px; */
+    max-height: 470px;
+}
+.sliderSection img{
+    max-height: 470px;
 }
 
 /* Right Tab */
@@ -67,9 +70,11 @@
     /* color: #fff; */
 }
 
-.right-tab .tab-pane{
+.right-tab .tab-content{
     overflow-y: auto;
+    height: calc(100% - 85px);
 }
+
 .single-pan {
     display: flex;
     margin: 5px;
@@ -158,7 +163,9 @@
     color: #FF1C32;
 }
 .service-tab #v-pills-tabContent h4{}
-.service-tab #v-pills-tabContent p{}
+.service-tab #v-pills-tabContent p{
+    text-align: justify;
+}
 
 
 
@@ -178,7 +185,8 @@
 #footer.show{
     bottom: 0;
 }
-.footer-top-area{position: relative;
+.footer-top-area{
+    position: relative;
     background-color: #C9C4C4;
     top: -19px;
     padding: 5px;
@@ -252,4 +260,40 @@ span.footer-upDown-btn img{
 	-webkit-animation:bounce 1s infinite;
 	animation:bounce 1s infinite;
 	cursor: pointer;
+}
+
+
+
+
+
+
+@media only screen and (min-width : 900px) and (max-width : 991px) {
+    #footer{
+        bottom: -398px;
+    }
+}
+
+
+@media only screen and (min-width : 760px) and (max-width : 899px) {
+
+
+    #footer{
+        position: relative !important;
+    }
+    .footer-upDown-btn{
+        display: none !important;
+    }
+
+}
+
+
+@media only screen and (min-width : 260px) and (max-width : 759px) {
+
+    #footer{
+        position: relative !important;
+    }
+    .footer-upDown-btn{
+        display: none !important;
+    }
+
 }

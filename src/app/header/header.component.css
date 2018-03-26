@@ -1,4 +1,36 @@
+.topMarque{
+    height: 40px;
+    display: flex;
+}
 
+#marqueLabel{
+    background-color: #ED1C24;
+    width: 80px;
+    height: 100%;
+    display: flex;
+}
+#marqueLabel p{
+    margin: auto;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+
+.marqueRunWay{
+    width: calc(100% - 80px);
+    padding: 0 5px;
+    overflow: hidden;
+    display: flex;
+}
+.marqueContent{
+    width: 100%;
+    margin: auto 0;
+}
+.marqueContent p{
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0 15px;
+}
 
 .logo{
     background-color: #ddd;
@@ -87,9 +119,7 @@ nav ul li{
     text-align: center;
 }
 
-.space1{
-    height: 40px;
-}
+
 .add1{
     padding: 0;
 }
