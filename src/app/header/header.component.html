@@ -23,10 +23,9 @@
       </div>
     </div>
 
-    <div class="add1 col-md-8">
-      <a href="#">
-        <img src="assets/images/add1.jpg" alt="">
-      </a>
+    <div class="topRight col-md-8">
+      <h3>Institution of Textile Engineers And Technologist</h3>
+      <p>House#53, Road#14, Sector13, Uttara, Dhaka, Bangladesh, Planet Earth</p>
     </div>
   </div>
 
@@ -35,49 +34,57 @@
     <div class="headerRight col-md-12">
       <nav>
         <ul class="navLeft">
-          <li class="active">
-            <a href="">Home</a>
+          <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a routerLink="/" >Home</a>
+          </li>
+          <li routerLinkActive="active">
+            <a routerLink="/about">About ITET</a>
+            <ul>
+              <li><a routerLink="/about">About Us</a></li>
+              <li><a href="">Aims & Objective</a></li>
+              <li><a href="">Executive Office Bearers</a></li>
+              <li><a href="">ITET Constitution</a></li>
+            </ul>
           </li>
           <li>
-            <a href="">Members</a>
+            <a href="">Membership</a>
+            <ul>
+              <li><a href="">Missing photo in ITET Database</a></li>
+              <li><a href="">About Membership</a></li>
+              <li><a href="">Membership Criteria</a></li>
+              <li><a href="">How to get membership</a></li>
+              <li><a href="">How to get membership</a></li>
+              <li><a href="">Membership Fee</a></li>
+              <li><a href="">Membership Form</a></li>
+            </ul>
+          </li>
+          
+          <li>
+            <a href="">Publication</a>
+            <ul>
+              <li><a href="">Downloads</a></li>
+            </ul>
           </li>
           <li>
-            <a href="">Blog</a>
+            <a href="">Center</a>
+            <ul>
+              <li><a href="">ITET Center</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="">Pages</a>
+          <li><a href="">Photo Galary</a></li>
+          <li><a href="">Important Downloads</a></li>
+          <li routerLinkActive="active"><a routerLink="/payments">Payments</a></li>
+          <li routerLinkActive="active">
+            <a routerLink="/contact" >Contact</a>
           </li>
-          <li>
-            <a href="">Features</a>
-          </li>
-          <li>
-            <a href="">Contact</a>
-          </li>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">Members</a>
-          </li>
-          <li>
-            <a href="">Blog</a>
-          </li>
-          <li>
-            <a href="">Pages</a>
-          </li>
-          <li>
-            <a href="">Features</a>
-          </li>
-          <li>
-            <a href="">Contact</a>
-          </li>
+          
         </ul>
 
         <ul class="navRight">
           <li>
             <a id="userAdd">
               <i class="fa fa-user-plus"></i>
-              <span>Add Member</span>
+              <span>Member Registration</span>
             </a>
           </li>
 
@@ -132,6 +139,3 @@
 </div>
 
 <!-- Login Modal End -->
-
-
-<home-page></home-page>

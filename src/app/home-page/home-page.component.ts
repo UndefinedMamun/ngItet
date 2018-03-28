@@ -10,9 +10,7 @@ export class HomePageComponent implements OnInit {
 
   constructor() { }
 
-  toggleFooter(){
-    $('#footer').toggleClass("show");
-  }
+  
 
   ngOnInit() {
   }

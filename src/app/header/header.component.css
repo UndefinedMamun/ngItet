@@ -62,13 +62,37 @@
     padding: 0;
 }
 
+.topRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(212, 211, 211);
+}
+
+.topRight p{
+    font-size: 16px;
+}
+.topRight h3{
+    font-weight: bold;
+}
+.topRight * {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 nav{
     display: flex;
     justify-content: space-between;
 }
 
+nav ul li:hover ul{
+    display: block;
+}
 nav ul li{
     float: left;
+    position: relative;
+    
+
 }
 
 .navLeft{
@@ -82,12 +106,42 @@ nav ul li{
     transition: .5s ease-out;
     border-radius: 2px;
     text-transform: uppercase;
+    display: inline-block;
 }
 
-.navLeft li a:hover, .navLeft li.active a{
+.navLeft li ul {
+    position: absolute;
+    width: 250px;
+    height: fit-content;
+    top: 31px;
+    left: 0;
+    z-index: 1;
+    background-color: #fff;
+    display: none;
+    padding: 5px 0;
+    
+}
+
+.navLeft li ul li{
+    /* padding: 5px; */
+    float: none;
+    display: block;
+}
+.navLeft li ul li a{
+    padding: 10px;
+    margin: 0;
+    display: block;
+}
+
+.navLeft li a:hover, .navLeft li.active>a{
     background-color: #ff7b74;
     color: #fff;
 }
+
+/* .navLeft li.active ul{
+    background-color: #fff;
+} */
+
 
 .navRight li{
     height: 100%;
@@ -95,7 +149,7 @@ nav ul li{
 
 .navRight li a{
     background-color: #F4716A;
-    width: 70px;
+    width: 85px;
     display: flex;
     height: 100%;
     color: #fff;
