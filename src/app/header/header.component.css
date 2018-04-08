@@ -182,10 +182,14 @@ nav ul li{
 }
 
 #search{
-    width: 80px;
-    background-color: #FF8E88;
+    width: 150px;
 }
-
+#search i{
+    font-size: 30px;
+}
+#search span{
+    font-size: 12px;
+}
 #myAccount{
     background-color: #FF7B74;
 }

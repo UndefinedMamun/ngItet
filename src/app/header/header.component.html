@@ -80,13 +80,14 @@
         </ul>
 
         <ul class="navRight">
+          
           <li>
-            <a id="userAdd">
-              <i class="fa fa-user-plus"></i>
-              <span>Member Registration</span>
+            <a id="search" routerLink="/search" [queryParams]="{animate: true, viewmode: 'grid'}">
+              <i class="fa fa-search"></i>
+              <span>Search for Members</span>
             </a>
           </li>
-
+          
           <li>
             <a id="myAccount" data-toggle="modal" data-target="#logInModal">
               <i class="fa fa-user"></i>
@@ -94,12 +95,7 @@
             </a>
           </li>
 
-          <li>
-            <a id="search" routerLink="/search" [queryParams]="{animate: true, viewmode: 'grid'}">
-              <i class="fa fa-search"></i>
-              <span>Search for Members</span>
-            </a>
-          </li>
+          
         </ul>
       </nav>
     </div>

@@ -1,4 +1,9 @@
 
+.addSpace a img{
+    height: 100%;
+    width: 100%;
+}
+
 @keyframes bounce {
     from,
     20%,
@@ -157,12 +162,13 @@
     font-style: italic;
 }
 .service-tab {
-    display: flex;
     margin-top: 20px;
+    height: 420px;
+    display: flex;
 }
 
 .service-tab #v-pills-tab {
-    /* width: 343px; */
+    width: 140px;
 }
 .service-tab #v-pills-tab a{
     display: flex;
@@ -181,7 +187,10 @@
 }
 
 .service-tab #v-pills-tabContent{
-    margin-left: 30px;
+    padding-left: 30px;
+    width: calc(100% - 140px);
+    height: 100%;
+    overflow-y: auto;
 }
 .service-tab #v-pills-tabContent i{
     font-size: 48px;
