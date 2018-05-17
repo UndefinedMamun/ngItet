@@ -30,74 +30,111 @@
   </div>
 
 
-  <div class="row">
-    <div class="headerRight col-md-12">
-      <nav>
-        <ul class="navLeft">
-          <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-            <a routerLink="/" >Home</a>
-          </li>
-          <li routerLinkActive="active">
-            <a routerLink="/about">About ITET</a>
-            <ul>
-              <li routerLinkActive="active"><a routerLink="/about">About Us</a></li>
-              <li routerLinkActive="active"><a routerLink="/aims">Aims & Objective</a></li>
-              <li routerLinkActive="active"><a routerLink="/eob">Executive Office Bearers</a></li>
-              <li routerLinkActive="active"><a routerLink="/constitution">ITET Constitution</a></li>
-            </ul>
-          </li>
-          <li routerLinkActive="active" >
-            <a routerLink="/missing-photo" >Membership</a>
-            <ul>
-              <li routerLinkActive="active"><a routerLink="/missing-photo">Missing photo in ITET Database</a></li>
-              <li routerLinkActive="active"><a routerLink="/about-membership">About Membership</a></li>
-              <li routerLinkActive="active"><a routerLink="/membership-criteria">Membership Criteria</a></li>
-              <li routerLinkActive="active"><a routerLink="/how-to-get">How to get membership</a></li>
-              <li routerLinkActive="active"><a routerLink="/membership-fee">Membership Fee</a></li>
-              <li routerLinkActive="active"><a routerLink="/membership-form">Membership Form</a></li>
-            </ul>
-          </li>
-          
-          <li routerLinkActive="active">
-            <a routerLink="/downloads">Publication</a>
-            <ul>
-              <li routerLinkActive="active"><a routerLink="/downloads">Downloads</a></li>
-            </ul>
-          </li>
-          <li routerLinkActive="active">
-            <a routerLink="/center">Center</a>
-            <ul>
-              <li routerLinkActive="active"><a routerLink="/center">ITET Center</a></li>
-            </ul>
-          </li>
-          <li routerLinkActive="active"><a routerLink="/photo-galary">Photo Galary</a></li>
-          <li routerLinkActive="active"><a routerLink="/important-downloads">Important Downloads</a></li>
-          <li routerLinkActive="active"><a routerLink="/payments">Payments</a></li>
-          <li routerLinkActive="active">
-            <a routerLink="/contact" >Contact</a>
-          </li>
-          
-        </ul>
+  <div class="row" id="mainNav">
+    <div class="navLeft col-8 nopadding">
 
-        <ul class="navRight">
-          
-          <li>
-            <a id="search" routerLink="/search" [queryParams]="{animate: true, viewmode: 'grid'}">
-              <i class="fa fa-search"></i>
-              <span>Search for Members</span>
-            </a>
-          </li>
-          
-          <li>
-            <a id="myAccount" data-toggle="modal" data-target="#logInModal">
-              <i class="fa fa-user"></i>
-              <span>Member Log In</span>
-            </a>
-          </li>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
+              <a routerLink="/" class="nav-link" >Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+
+            <li routerLinkActive="active" class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                About ITET
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a routerLinkActive="active" routerLink="/about"class="dropdown-item" >About Us</a>
+                <a routerLinkActive="active" routerLink="/aims"class="dropdown-item" >Aims & Objective</a>
+                <a routerLinkActive="active" routerLink="/eob"class="dropdown-item" >Executive Office Bearers</a>
+                <a routerLinkActive="active" routerLink="/constitution"class="dropdown-item" >ITET Constitution</a>
+                <!-- <div class="dropdown-divider"></div> -->
+              </div>
+            </li>
+
+            <li routerLinkActive="active" class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Membership
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a routerLinkActive="active" routerLink="/missing-photo"class="dropdown-item" >Missing photo in ITET Database</a>
+                <a routerLinkActive="active" routerLink="/about-membership"class="dropdown-item" >About Membership</a>
+                <a routerLinkActive="active" routerLink="/membership-criteria"class="dropdown-item" >Membership Criteria</a>
+                <a routerLinkActive="active" routerLink="/how-to-get"class="dropdown-item" >How to get membership</a>
+
+                <div class="dropdown-divider"></div>
+
+                <a routerLinkActive="active" routerLink="/membership-fee"class="dropdown-item" >Membership Fee</a>
+                <a routerLinkActive="active" routerLink="/membership-form"class="dropdown-item" >Membership Form</a>
+              </div>
+            </li>
+
+            <li routerLinkActive="active" class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Publication
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a routerLinkActive="active" routerLink="/downloads" class="dropdown-item" >Downloads</a>
+                <a class="dropdown-item" 
+                routerLinkActive="active"
+                routerLink="/important-downloads">Important Downloads</a>
+              </div>
+            </li>
+
+            <li routerLinkActive="active" class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Center
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a routerLinkActive="active" routerLink="/center"class="dropdown-item" >ITET Center</a>
+              </div>
+            </li>
+
+            <li routerLinkActive="active" class="nav-item">
+              <a class="nav-link" routerLink="/photo-galary">Photo Galary</a>
+            </li>
+            <li routerLinkActive="active" class="nav-item">
+              <a class="nav-link" routerLink="/payments">Payments</a>
+            </li>
+            <li routerLinkActive="active" class="nav-item">
+              <a class="nav-link" routerLink="/contact">Contact</a>
+            </li>
+
+          </ul>
+        </div>
       </nav>
+    </div>
+    <div class="col-4 nopadding">
+      <ul class="navRight pull-right">
+
+        <li>
+          <a id="search" routerLink="/search" [queryParams]="{animate: true, viewmode: 'grid'}">
+            <i class="fa fa-search"></i>
+            <span>Search for Members</span>
+          </a>
+        </li>
+
+        <li>
+          <a id="myAccount" data-toggle="modal" data-target="#logInModal">
+            <i class="fa fa-user"></i>
+            <span>Member Log In</span>
+          </a>
+        </li>
+
+
+      </ul>
     </div>
   </div>
 </header>

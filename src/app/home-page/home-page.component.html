@@ -1,9 +1,9 @@
 <app-header></app-header>
 
-<div class="container-fluid sliderSection">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row sliderSection">
 
-    <div class="col-md-8">
+    <div class="col-md-8 nopadding">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -33,20 +33,22 @@
     </div>
 
     <div class="col-md-4 right-tab">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link active" id="pills-notice-tab" data-toggle="pill" href="#pills-notice" role="tab" aria-controls="pills-notice"
-            aria-selected="true">Notice</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-events-tab" data-toggle="pill" href="#pills-events" role="tab" aria-controls="pills-events"
-            aria-selected="false">Events</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="pills-upcoming-events-tab" data-toggle="pill" href="#pills-upcoming-events" role="tab" aria-controls="pills-upcoming-events"
-            aria-selected="false">Downloads</a>
-        </li>
-      </ul>
+      <div>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-notice-tab" data-toggle="pill" href="#pills-notice" role="tab" aria-controls="pills-notice"
+              aria-selected="true">Notice</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-events-tab" data-toggle="pill" href="#pills-events" role="tab" aria-controls="pills-events"
+              aria-selected="false">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="pills-upcoming-events-tab" data-toggle="pill" href="#pills-upcoming-events" role="tab" aria-controls="pills-upcoming-events"
+              aria-selected="false">Downloads</a>
+          </li>
+        </ul>
+      </div>
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-notice" role="tabpanel" aria-labelledby="pills-notice-tab">
 
@@ -135,6 +137,7 @@
 
   </div>
 </div>
+
 
 <section class="container-fluid">
   <div class="row">

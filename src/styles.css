@@ -40,3 +40,8 @@ a:hover{
     text-decoration: none;
     color: inherit;
 }
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }

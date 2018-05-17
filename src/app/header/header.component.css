@@ -67,6 +67,8 @@
     flex-direction: column;
     justify-content: center;
     background-color: rgb(212, 211, 211);
+    text-align: center;
+    padding: 15px;
 }
 
 .topRight p{
@@ -80,9 +82,14 @@
     margin-right: auto;
 }
 
-nav{
+mainNav{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navbar {
+    padding: 0;
 }
 
 nav ul li:hover ul{
@@ -91,12 +98,14 @@ nav ul li:hover ul{
 nav ul li{
     float: left;
     position: relative;
-    
+}
+
+button.navbar-toggler{
 
 }
 
 .navLeft{
-    padding: 20px 5px;
+    display: flex;
 }
 
 .navLeft li a{
@@ -133,7 +142,7 @@ nav ul li{
     display: block;
 }
 
-.navLeft li a:hover, .navLeft li.active>a{
+.navLeft li a:hover, .navLeft li.active>a, .navLeft .dropdown-menu a:hover, .navLeft .dropdown-menu a.dropdown-item.active{
     background-color: #ff7b74;
     color: #fff;
 }
@@ -142,9 +151,16 @@ nav ul li{
     background-color: #fff;
 } */
 
+.navLeft .dropdown-menu a.dropdown-item{
+    padding: 5px;
+    margin: 0;
+    font-size: 14px;
+} 
+
 
 .navRight li{
     height: 100%;
+    float: left;
 }
 
 .navRight li a{
@@ -182,12 +198,12 @@ nav ul li{
 }
 
 #search{
-    width: 150px;
+    /* width: 150px; */
 }
-#search i{
+#search i, #myAccount i{
     font-size: 30px;
 }
-#search span{
+#search span, #myAccount span{
     font-size: 12px;
 }
 #myAccount{
@@ -195,17 +211,43 @@ nav ul li{
 }
 
 
+
 @media only screen and (max-width: 991px) {
-    nav{
-        flex-direction: column;
-    }
-}
-
-
-@media only screen and (max-width: 767px) {
-    nav ul li{
+    /* nav ul li{
         padding-top: 5px;
+    } */
+    .navbar-collapse {
+        padding: 10px 0;
+    }
+    
+    .navbar-toggler{
+        margin-top: 15px;
+    }
+    .navLeft{
+        display: block;
+    }
+    nav ul li{
+        padding: 2px 0;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 576px){
+    #search i, #myAccount i {
+        font-size: 14px
+    }
+    #search span, #myAccount span {
+        font-size: 6px;
+    }
+    .navRight li a {
+        width: 50px;
+    }
+    .navbar-toggler{
+        margin-top: 2px;
     }
 }
+
 
 
