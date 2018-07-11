@@ -8,6 +8,7 @@ declare var $:any;
   styleUrls: ['./search-panel.component.css']
 })
 export class SearchPanelComponent implements OnInit{
+  returnUrl:String;
   viewType = "list";
   searchQuery;
   filter = {
@@ -92,12 +93,12 @@ export class SearchPanelComponent implements OnInit{
   }
 
   hideSearchPanel(){
-    let self = this.router;
+    let self = this;
     $("#searchPanel").animate({
       left: "-70%",
       opacity: 0
     }, 400, "swing", function(){
-      self.navigate(['/']);
+      self.router.navigate([self.returnUrl]);
     });
   }
 
@@ -119,6 +120,10 @@ export class SearchPanelComponent implements OnInit{
       this.animateSearchPanel();
     else
       $("#searchPanel").css("opacity", 1);
+
+    this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+
+    console.log(this.returnUrl);
     
     this.route.queryParamMap
       .subscribe(params => {

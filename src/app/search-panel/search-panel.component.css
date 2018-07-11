@@ -2,12 +2,13 @@
 #searchPanel{
     position: absolute;
     width: 100%;
-    height: calc(100% - 60px);
+    height: 100%;
     top: 0;
     left: 0;
     background-color: #fff;
     transition: left 1s ease-out;
     opacity: 0;
+    z-index: 11;
 }
 
 
@@ -83,7 +84,7 @@
 
 .search-result-container{
     display: flex;
-    height: 100%;
+    height: calc(100% - 60px);
 }
 
 .search-filter{

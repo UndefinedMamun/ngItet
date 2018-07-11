@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 declare var $:any;
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ declare var $:any;
 export class HeaderComponent implements OnInit, AfterViewInit {
   public invalidLogin = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     $(".marqueContent").marquee({
       duration: 10000
     });
+
+    
   }
 
 }
