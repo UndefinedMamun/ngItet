@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { SearchPanelService } from '../services/search-panel.service';
-declare var $:any;
+import 'rxjs/add/operator/filter';
+declare var $: any;
 @Component({
   selector: 'search-panel',
   templateUrl: './search-panel.component.html',
   styleUrls: ['./search-panel.component.css']
 })
-export class SearchPanelComponent implements OnInit{
-  returnUrl:String;
+export class SearchPanelComponent implements OnInit {
+  returnUrl: String;
   viewType = "list";
   searchQuery;
   filter = {
@@ -32,44 +33,44 @@ export class SearchPanelComponent implements OnInit{
 
   filtered = this.members;
 
-  mainSearch(){
+  mainSearch() {
     this.members = this.service.search(this.searchQuery);
     this.filterMembers();
   }
 
-  filterMembers(){
-    this.filtered = this.members.filter( member => {
+  filterMembers() {
+    this.filtered = this.members.filter(member => {
       let res = true;
 
-      if(this.filter.fId !== "")
+      if (this.filter.fId !== "")
         res = res && (+this.filter.fId == member.id);
 
-      if(this.filter.fName !== "")
+      if (this.filter.fName !== "")
         res = res && (member.name.toLowerCase().includes(this.filter.fName.toLowerCase()));
 
-      if(this.filter.fUserName !== "")
+      if (this.filter.fUserName !== "")
         res = res && (member.userName.toLowerCase().includes(this.filter.fUserName.toLowerCase()));
-      
-      if(this.filter.fEmail !== "")
+
+      if (this.filter.fEmail !== "")
         res = res && (member.email.toLowerCase().includes(this.filter.fEmail.toLowerCase()));
-      
-      if(this.filter.fContact !== "")
+
+      if (this.filter.fContact !== "")
         res = res && (member.contact.includes(this.filter.fContact));
-      
-      if(this.filter.fCompany !== "")
+
+      if (this.filter.fCompany !== "")
         res = res && (member.company.toLowerCase().includes(this.filter.fCompany.toLowerCase()));
-      
-      if(this.filter.fAcademy > 0)
+
+      if (this.filter.fAcademy > 0)
         res = res && (+this.filter.fAcademy == member.academic);
-      
-      if(this.filter.fRelign > 0)
+
+      if (this.filter.fRelign > 0)
         res = res && (+this.filter.fRelign == member.relign);
 
-      return res;      
+      return res;
     })
   }
 
-  consol(){
+  consol() {
     console.log(this.filter);
   }
 
@@ -77,32 +78,38 @@ export class SearchPanelComponent implements OnInit{
     private route: ActivatedRoute,
     private router: Router,
     private service: SearchPanelService
-    
-  ) { 
+  ) {
     // this.router.events.subscribe((e: any[]) => {
     //   console.log('previous', e[1].urlAfterRedirects);
     // });
-  }
-  
 
-  toggleFilters(){
-    if($(window).width() > 480 )
+    // router.events
+    //   .filter(event => event instanceof NavigationEnd)
+    //   .subscribe(e => {
+    //     console.log('prev:', this.previousUrl);
+    //     this.previousUrl = e.url;
+    //   });
+  }
+
+
+  toggleFilters() {
+    if ($(window).width() > 480)
       return;
     $('.search-filter').toggleClass("mView");
     $('body').toggleClass("noScroll");
   }
 
-  hideSearchPanel(){
+  hideSearchPanel() {
     let self = this;
     $("#searchPanel").animate({
       left: "-70%",
       opacity: 0
-    }, 400, "swing", function(){
+    }, 400, "swing", function () {
       self.router.navigate([self.returnUrl]);
     });
   }
 
-  animateSearchPanel(){
+  animateSearchPanel() {
     let searchPanel = $("#searchPanel");
     $(searchPanel).css({
       left: "-90%",
@@ -110,28 +117,30 @@ export class SearchPanelComponent implements OnInit{
     })
     $(searchPanel).animate({
       left: 0,
-      opacity: 1 
+      opacity: 1
     }, 200, "swing");
   }
 
   ngOnInit() {
     let animate = this.route.snapshot.queryParamMap.get("animate");
-    if(animate)
+    if (animate)
       this.animateSearchPanel();
     else
       $("#searchPanel").css("opacity", 1);
 
     this.returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') || '/';
+    // this.returnUrl = this.previousRouteService.getPreviousUrl();
+
 
     console.log(this.returnUrl);
-    
+
     this.route.queryParamMap
       .subscribe(params => {
         let viewType = params.get('viewmode');
-        if(viewType)
+        if (viewType)
           this.viewType = viewType;
       })
-    
+
   }
 
 }

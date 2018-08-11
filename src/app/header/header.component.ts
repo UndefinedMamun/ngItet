@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-declare var $:any;
+declare var $: any;
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,18 +12,23 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+
   }
 
-  toggleSearchPanel(){
+  returnUrl() {
+    return this.router.url;
+  }
+
+  toggleSearchPanel() {
     $("#searchPanel").toggleClass("visible");
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     $(".marqueContent").marquee({
       duration: 10000
     });
 
-    
+
   }
 
 }

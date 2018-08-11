@@ -42,63 +42,57 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-item">
-              <a routerLink="/" class="nav-link" >Home
+              <a routerLink="/" class="nav-link">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
 
             <li routerLinkActive="active" class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 About ITET
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a routerLinkActive="active" routerLink="/about"class="dropdown-item" >About Us</a>
-                <a routerLinkActive="active" routerLink="/aims"class="dropdown-item" >Aims & Objective</a>
-                <a routerLinkActive="active" routerLink="/eob"class="dropdown-item" >Executive Office Bearers</a>
-                <a routerLinkActive="active" routerLink="/constitution"class="dropdown-item" >ITET Constitution</a>
+                <a routerLinkActive="active" routerLink="/about" class="dropdown-item">About Us</a>
+                <a routerLinkActive="active" routerLink="/aims" class="dropdown-item">Aims & Objective</a>
+                <a routerLinkActive="active" routerLink="/eob" class="dropdown-item">Executive Office Bearers</a>
+                <a routerLinkActive="active" routerLink="/constitution" class="dropdown-item">ITET Constitution</a>
                 <!-- <div class="dropdown-divider"></div> -->
               </div>
             </li>
 
             <li routerLinkActive="active" class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Membership
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a routerLinkActive="active" routerLink="/missing-photo"class="dropdown-item" >Missing photo in ITET Database</a>
-                <a routerLinkActive="active" routerLink="/about-membership"class="dropdown-item" >About Membership</a>
-                <a routerLinkActive="active" routerLink="/membership-criteria"class="dropdown-item" >Membership Criteria</a>
-                <a routerLinkActive="active" routerLink="/how-to-get"class="dropdown-item" >How to get membership</a>
+                <a routerLinkActive="active" routerLink="/missing-photo" class="dropdown-item">Missing photo in ITET Database</a>
+                <a routerLinkActive="active" routerLink="/about-membership" class="dropdown-item">About Membership</a>
+                <a routerLinkActive="active" routerLink="/membership-criteria" class="dropdown-item">Membership Criteria</a>
+                <a routerLinkActive="active" routerLink="/how-to-get" class="dropdown-item">How to get membership</a>
 
                 <div class="dropdown-divider"></div>
 
-                <a routerLinkActive="active" routerLink="/membership-fee"class="dropdown-item" >Membership Fee</a>
-                <a routerLinkActive="active" routerLink="/membership-form"class="dropdown-item" >Membership Form</a>
+                <a routerLinkActive="active" routerLink="/membership-fee" class="dropdown-item">Membership Fee</a>
+                <a routerLinkActive="active" routerLink="/membership-form" class="dropdown-item">Membership Form</a>
               </div>
             </li>
 
             <li routerLinkActive="active" class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Publication
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a routerLinkActive="active" routerLink="/downloads" class="dropdown-item" >Downloads</a>
-                <a class="dropdown-item" 
-                routerLinkActive="active"
-                routerLink="/important-downloads">Important Downloads</a>
+                <a routerLinkActive="active" routerLink="/downloads" class="dropdown-item">Downloads</a>
+                <a class="dropdown-item" routerLinkActive="active" routerLink="/important-downloads">Important Downloads</a>
               </div>
             </li>
 
             <li routerLinkActive="active" class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Center
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a routerLinkActive="active" routerLink="/center"class="dropdown-item" >ITET Center</a>
+                <a routerLinkActive="active" routerLink="/center" class="dropdown-item">ITET Center</a>
               </div>
             </li>
 
@@ -120,7 +114,7 @@
       <ul class="navRight pull-right">
 
         <li>
-          <a id="search" routerLink="/search" [queryParams]="{animate: true, viewmode: 'grid', returnUrl: router.url}">
+          <a id="search" routerLink="/search" [queryParams]="{animate: true, viewmode: 'grid', returnUrl: returnUrl()}">
             <i class="fa fa-search"></i>
             <span>Search for Members</span>
           </a>
